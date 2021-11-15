@@ -40,7 +40,7 @@ function RegisterUser({ user }) {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Register new user</h2>
       <form onChange={onChange}>
         <input type="text" placeholder="New user name" id="username" />
         <input type="text" placeholder="New password" id="password" />
