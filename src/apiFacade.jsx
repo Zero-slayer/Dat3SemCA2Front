@@ -15,6 +15,11 @@ function apiFacade() {
             .then(handleHttpErrors)
             .then(response => { setToken(response.token) })
     };
+    const register = (user, password) => {
+        const options = makeOptions("POST", false, { username: user, password: password });
+        return fetch(URL + "/api/register", options)
+            .then(handleHttpErrors)
+    }
     const fetchData = () => {
         const options = makeOptions("GET", true);
         return fetch(URL + "/api/info/user", options).then(handleHttpErrors);
@@ -54,6 +59,7 @@ function apiFacade() {
         getToken,
         loggedIn,
         login,
+        register,
         logout,
         fetchData
     }
